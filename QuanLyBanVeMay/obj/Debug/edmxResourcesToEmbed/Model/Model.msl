@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VeMayBayModelStoreContainer" CdmEntityContainer="VeMayBayEntities">
+    <EntitySetMapping Name="BANGTRATHONGTINVEs">
+      <EntityTypeMapping TypeName="VeMayBayModel.BANGTRATHONGTINVE">
+        <MappingFragment StoreEntitySet="BANGTRATHONGTINVEs">
+          <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+          <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+          <ScalarProperty Name="GIAVE" ColumnName="GIAVE" />
+          <ScalarProperty Name="SOLUONGMAX" ColumnName="SOLUONGMAX" />
+          <ScalarProperty Name="GHETRONG" ColumnName="GHETRONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETLICHTRINHBAYs">
+      <EntityTypeMapping TypeName="VeMayBayModel.CHITIETLICHTRINHBAY">
+        <MappingFragment StoreEntitySet="CHITIETLICHTRINHBAYs">
+          <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+          <ScalarProperty Name="SANBAYID" ColumnName="SANBAYID" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="TG_CHO" ColumnName="TG_CHO" />
+          <ScalarProperty Name="CHUYENBAYKETIEPID" ColumnName="CHUYENBAYKETIEPID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUYENBAYs">
+      <EntityTypeMapping TypeName="VeMayBayModel.CHUYENBAY">
+        <MappingFragment StoreEntitySet="CHUYENBAYs">
+          <ScalarProperty Name="CHUYENBAYID" ColumnName="CHUYENBAYID" />
+          <ScalarProperty Name="GIOKHOIHANHTHUCTE" ColumnName="GIOKHOIHANHTHUCTE" />
+          <ScalarProperty Name="GIODENDUKIEN" ColumnName="GIODENDUKIEN" />
+          <ScalarProperty Name="MACHUYENBAY" ColumnName="MACHUYENBAY" />
+          <ScalarProperty Name="HANG" ColumnName="HANG" />
+          <ScalarProperty Name="MAYBAY" ColumnName="MAYBAY" />
+          <ScalarProperty Name="GOIDICHVU" ColumnName="GOIDICHVU" />
+          <ScalarProperty Name="HANHLYXACHTAY" ColumnName="HANHLYXACHTAY" />
+          <ScalarProperty Name="HANHLYKIGOI" ColumnName="HANHLYKIGOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HANHKHACHes">
+      <EntityTypeMapping TypeName="VeMayBayModel.HANHKHACH">
+        <MappingFragment StoreEntitySet="HANHKHACHes">
+          <ScalarProperty Name="HANHKHACHID" ColumnName="HANHKHACHID" />
+          <ScalarProperty Name="CMNDHOACPASSPORT" ColumnName="CMNDHOACPASSPORT" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICHTRINHBAYs">
+      <EntityTypeMapping TypeName="VeMayBayModel.LICHTRINHBAY">
+        <MappingFragment StoreEntitySet="LICHTRINHBAYs">
+          <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+          <ScalarProperty Name="GIOKHOIHANHDUKIEN" ColumnName="GIOKHOIHANHDUKIEN" />
+          <ScalarProperty Name="TGBAYDUKIEN" ColumnName="TGBAYDUKIEN" />
+          <ScalarProperty Name="SBDI" ColumnName="SBDI" />
+          <ScalarProperty Name="SBDEN" ColumnName="SBDEN" />
+          <ScalarProperty Name="CHUYENBAYID" ColumnName="CHUYENBAYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIVEs">
+      <EntityTypeMapping TypeName="VeMayBayModel.LOAIVE">
+        <MappingFragment StoreEntitySet="LOAIVEs">
+          <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANBAYs">
+      <EntityTypeMapping TypeName="VeMayBayModel.SANBAY">
+        <MappingFragment StoreEntitySet="SANBAYs">
+          <ScalarProperty Name="SANBAYID" ColumnName="SANBAYID" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THAMSOes">
+      <EntityTypeMapping TypeName="VeMayBayModel.THAMSO">
+        <MappingFragment StoreEntitySet="THAMSOes">
+          <ScalarProperty Name="SLSB" ColumnName="SLSB" />
+          <ScalarProperty Name="MIN_TGB" ColumnName="MIN_TGB" />
+          <ScalarProperty Name="MIN_TGD" ColumnName="MIN_TGD" />
+          <ScalarProperty Name="MAX_TGD" ColumnName="MAX_TGD" />
+          <ScalarProperty Name="SLHV" ColumnName="SLHV" />
+          <ScalarProperty Name="MIN_TGDV" ColumnName="MIN_TGDV" />
+          <ScalarProperty Name="MIN_TGHV" ColumnName="MIN_TGHV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEs">
+      <EntityTypeMapping TypeName="VeMayBayModel.VE">
+        <MappingFragment StoreEntitySet="VEs">
+          <ScalarProperty Name="VEID" ColumnName="VEID" />
+          <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+          <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+          <ScalarProperty Name="HANHKHACHID" ColumnName="HANHKHACHID" />
+          <ScalarProperty Name="NGAYBAN" ColumnName="NGAYBAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HANGBAYs">
+      <EntityTypeMapping TypeName="VeMayBayModel.HANGBAY">
+        <MappingFragment StoreEntitySet="HANGBAYs">
+          <ScalarProperty Name="NGHOPTAC" ColumnName="NGHOPTAC" />
+          <ScalarProperty Name="THONGTIN" ColumnName="THONGTIN" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DCHIVP" ColumnName="DCHIVP" />
+          <ScalarProperty Name="HOTLINE" ColumnName="HOTLINE" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="HANGBAYID" ColumnName="HANGBAYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

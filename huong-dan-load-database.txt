@@ -1,0 +1,5 @@
+﻿1. Phát sinh script từ model Model1.edmx sẵn trong project (Chuột phải --> Generate Database From Model). 
+2. Từ Server Explore, thao tác tạo 1 SQL Server Database mới. Đặt tên là VeMayBay.
+3. Chạy file script ở bước 1 vào Database tạo được ở bước 2.
+Đến đây, ta đã connect được dữ liệu đến server, tạo được cấu trúc dữ liệu (các bảng và cột) cần thiết.
+4. Thêm: load dữ liệu mẫu bằng cách chạy code trong file script.sql để sẵn trong project.

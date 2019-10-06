@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:QuanLyBanVeMay.ResourceXAML"
+                    xmlns:viewmodel="clr-namespace:QuanLyBanVeMay.ViewModel">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:TicketViewModel x:Key="TicketVM"></viewmodel:TicketViewModel>
+    <viewmodel:CustomersViewModel x:Key="CustomerVM"></viewmodel:CustomersViewModel>
+    <viewmodel:ThamSoViewModel x:Key="ThamSoVM"></viewmodel:ThamSoViewModel>
+    <viewmodel:ThongKeChuyenBayViewModel x:Key="TKCBVM"></viewmodel:ThongKeChuyenBayViewModel>
+    <viewmodel:LichTrinhBayViewModel x:Key="LichTrinhBayVM"></viewmodel:LichTrinhBayViewModel>
+    <viewmodel:AirlineCompanyViewModel x:Key="AirlineCompanyVM"></viewmodel:AirlineCompanyViewModel>
+    <viewmodel:AirlineCompanyViewModel x:Key="AirlineCompanyVM"></viewmodel:AirlineCompanyViewModel>
+
+
+
+</ResourceDictionary>

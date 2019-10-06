@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VeMayBayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BANGTRATHONGTINVEs">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+            <PropertyRef Name="LOAIVEID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="int" Nullable="false" />
+          <Property Name="LOAIVEID" Type="int" Nullable="false" />
+          <Property Name="GIAVE" Type="float" Nullable="false" />
+          <Property Name="SOLUONGMAX" Type="int" Nullable="false" />
+          <Property Name="GHETRONG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHITIETLICHTRINHBAYs">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+            <PropertyRef Name="SANBAYID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="int" Nullable="false" />
+          <Property Name="SANBAYID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="STT" Type="int" Nullable="false" />
+          <Property Name="TG_CHO" Type="float" Nullable="false" />
+          <Property Name="CHUYENBAYKETIEPID" Type="int" />
+        </EntityType>
+        <EntityType Name="CHUYENBAYs">
+          <Key>
+            <PropertyRef Name="CHUYENBAYID" />
+          </Key>
+          <Property Name="CHUYENBAYID" Type="int" Nullable="false" />
+          <Property Name="GIOKHOIHANHTHUCTE" Type="datetime" Nullable="false" />
+          <Property Name="GIODENDUKIEN" Type="datetime" Nullable="false" />
+          <Property Name="MACHUYENBAY" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="HANG" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="MAYBAY" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="GOIDICHVU" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="HANHLYXACHTAY" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="HANHLYKIGOI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HANGBAYs">
+          <Key>
+            <PropertyRef Name="HANGBAYID" />
+          </Key>
+          <Property Name="HANGBAYID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOTLINE" Type="nvarchar" MaxLength="25" />
+          <Property Name="DCHIVP" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="THONGTIN" Type="nvarchar" MaxLength="255" />
+          <Property Name="NGHOPTAC" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HANHKHACHes">
+          <Key>
+            <PropertyRef Name="HANHKHACHID" />
+          </Key>
+          <Property Name="HANHKHACHID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="CMNDHOACPASSPORT" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="LICHTRINHBAYs">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="int" Nullable="false" />
+          <Property Name="GIOKHOIHANHDUKIEN" Type="datetime" Nullable="false" />
+          <Property Name="TGBAYDUKIEN" Type="float" Nullable="false" />
+          <Property Name="SBDI" Type="varchar" MaxLength="5" />
+          <Property Name="SBDEN" Type="varchar" MaxLength="5" />
+          <Property Name="CHUYENBAYID" Type="int" />
+        </EntityType>
+        <EntityType Name="LOAIVEs">
+          <Key>
+            <PropertyRef Name="LOAIVEID" />
+          </Key>
+          <Property Name="LOAIVEID" Type="int" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SANBAYs">
+          <Key>
+            <PropertyRef Name="SANBAYID" />
+          </Key>
+          <Property Name="SANBAYID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THAMSOes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SLSB" Type="int" Nullable="false" />
+          <Property Name="MIN_TGB" Type="float" Nullable="false" />
+          <Property Name="MIN_TGD" Type="float" Nullable="false" />
+          <Property Name="MAX_TGD" Type="float" Nullable="false" />
+          <Property Name="SLHV" Type="int" Nullable="false" />
+          <Property Name="MIN_TGDV" Type="float" Nullable="false" />
+          <Property Name="MIN_TGHV" Type="float" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VEs">
+          <Key>
+            <PropertyRef Name="VEID" />
+          </Key>
+          <Property Name="VEID" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="LICHTRINHBAYID" Type="int" />
+          <Property Name="LOAIVEID" Type="int" />
+          <Property Name="HANHKHACHID" Type="varchar" MaxLength="12" />
+          <Property Name="NGAYBAN" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BANGTRATHONGTINVEs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="1" />
+          <End Role="BANGTRATHONGTINVEs" Type="Self.BANGTRATHONGTINVEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="BANGTRATHONGTINVEs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTRATHONGTINVEs_LOAIVEs">
+          <End Role="LOAIVEs" Type="Self.LOAIVEs" Multiplicity="1" />
+          <End Role="BANGTRATHONGTINVEs" Type="Self.BANGTRATHONGTINVEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Principal>
+            <Dependent Role="BANGTRATHONGTINVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_CHUYENBAYs">
+          <End Role="CHUYENBAYs" Type="Self.CHUYENBAYs" Multiplicity="0..1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="CHUYENBAYKETIEPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_SANBAYs">
+          <End Role="SANBAYs" Type="Self.SANBAYs" Multiplicity="1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHUYENBAYs_HANGBAYs">
+          <End Role="HANGBAYs" Type="Self.HANGBAYs" Multiplicity="1" />
+          <End Role="CHUYENBAYs" Type="Self.CHUYENBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGBAYs">
+              <PropertyRef Name="HANGBAYID" />
+            </Principal>
+            <Dependent Role="CHUYENBAYs">
+              <PropertyRef Name="HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_CHUYENBAYs">
+          <End Role="CHUYENBAYs" Type="Self.CHUYENBAYs" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_SANBAYs_1">
+          <End Role="SANBAYs" Type="Self.SANBAYs" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="SBDI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_SANBAYs_2">
+          <End Role="SANBAYs" Type="Self.SANBAYs" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="SBDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_HANHKHACHes">
+          <End Role="HANHKHACHes" Type="Self.HANHKHACHes" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANHKHACHes">
+              <PropertyRef Name="HANHKHACHID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="HANHKHACHID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAYs" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_LOAIVEs">
+          <End Role="LOAIVEs" Type="Self.LOAIVEs" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VeMayBayModelStoreContainer">
+          <EntitySet Name="BANGTRATHONGTINVEs" EntityType="Self.BANGTRATHONGTINVEs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETLICHTRINHBAYs" EntityType="Self.CHITIETLICHTRINHBAYs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHUYENBAYs" EntityType="Self.CHUYENBAYs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HANGBAYs" EntityType="Self.HANGBAYs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HANHKHACHes" EntityType="Self.HANHKHACHes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LICHTRINHBAYs" EntityType="Self.LICHTRINHBAYs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIVEs" EntityType="Self.LOAIVEs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SANBAYs" EntityType="Self.SANBAYs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THAMSOes" EntityType="Self.THAMSOes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VEs" EntityType="Self.VEs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BANGTRATHONGTINVEs_LICHTRINHBAYs" Association="Self.FK_BANGTRATHONGTINVEs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="BANGTRATHONGTINVEs" EntitySet="BANGTRATHONGTINVEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTRATHONGTINVEs_LOAIVEs" Association="Self.FK_BANGTRATHONGTINVEs_LOAIVEs">
+            <End Role="LOAIVEs" EntitySet="LOAIVEs" />
+            <End Role="BANGTRATHONGTINVEs" EntitySet="BANGTRATHONGTINVEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_CHUYENBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_CHUYENBAYs">
+            <End Role="CHUYENBAYs" EntitySet="CHUYENBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_SANBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_SANBAYs">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHUYENBAYs_HANGBAYs" Association="Self.FK_CHUYENBAYs_HANGBAYs">
+            <End Role="HANGBAYs" EntitySet="HANGBAYs" />
+            <End Role="CHUYENBAYs" EntitySet="CHUYENBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_CHUYENBAYs" Association="Self.FK_LICHTRINHBAYs_CHUYENBAYs">
+            <End Role="CHUYENBAYs" EntitySet="CHUYENBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_SANBAYs_1" Association="Self.FK_LICHTRINHBAYs_SANBAYs_1">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_SANBAYs_2" Association="Self.FK_LICHTRINHBAYs_SANBAYs_2">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_HANHKHACHes" Association="Self.FK_VEs_HANHKHACHes">
+            <End Role="HANHKHACHes" EntitySet="HANHKHACHes" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_LICHTRINHBAYs" Association="Self.FK_VEs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_LOAIVEs" Association="Self.FK_VEs_LOAIVEs">
+            <End Role="LOAIVEs" EntitySet="LOAIVEs" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VeMayBayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BANGTRATHONGTINVE">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+            <PropertyRef Name="LOAIVEID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="Int32" Nullable="false" />
+          <Property Name="LOAIVEID" Type="Int32" Nullable="false" />
+          <Property Name="GIAVE" Type="Double" Nullable="false" />
+          <Property Name="SOLUONGMAX" Type="Int32" Nullable="false" />
+          <Property Name="GHETRONG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LICHTRINHBAY" Relationship="Self.FK_BANGTRATHONGTINVEs_LICHTRINHBAYs" FromRole="BANGTRATHONGTINVEs" ToRole="LICHTRINHBAYs" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK_BANGTRATHONGTINVEs_LOAIVEs" FromRole="BANGTRATHONGTINVEs" ToRole="LOAIVEs" />
+        </EntityType>
+        <EntityType Name="CHITIETLICHTRINHBAY">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+            <PropertyRef Name="SANBAYID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="Int32" Nullable="false" />
+          <Property Name="SANBAYID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STT" Type="Int32" Nullable="false" />
+          <Property Name="TG_CHO" Type="Double" Nullable="false" />
+          <Property Name="CHUYENBAYKETIEPID" Type="Int32" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK_CHITIETLICHTRINHBAYs_CHUYENBAYs" FromRole="CHITIETLICHTRINHBAYs" ToRole="CHUYENBAYs" />
+          <NavigationProperty Name="LICHTRINHBAY" Relationship="Self.FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs" FromRole="CHITIETLICHTRINHBAYs" ToRole="LICHTRINHBAYs" />
+          <NavigationProperty Name="SANBAY" Relationship="Self.FK_CHITIETLICHTRINHBAYs_SANBAYs" FromRole="CHITIETLICHTRINHBAYs" ToRole="SANBAYs" />
+        </EntityType>
+        <EntityType Name="CHUYENBAY">
+          <Key>
+            <PropertyRef Name="CHUYENBAYID" />
+          </Key>
+          <Property Name="CHUYENBAYID" Type="Int32" Nullable="false" />
+          <Property Name="GIOKHOIHANHTHUCTE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GIODENDUKIEN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MACHUYENBAY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HANG" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAYBAY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GOIDICHVU" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HANHLYXACHTAY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HANHLYKIGOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CHITIETLICHTRINHBAYs" Relationship="Self.FK_CHITIETLICHTRINHBAYs_CHUYENBAYs" FromRole="CHUYENBAYs" ToRole="CHITIETLICHTRINHBAYs" />
+          <NavigationProperty Name="LICHTRINHBAYs" Relationship="Self.FK_LICHTRINHBAYs_CHUYENBAYs" FromRole="CHUYENBAYs" ToRole="LICHTRINHBAYs" />
+          <NavigationProperty Name="HANGBAY" Relationship="VeMayBayModel.FK_CHUYENBAYs_HANGBAYs" FromRole="CHUYENBAY" ToRole="HANGBAY" />
+        </EntityType>
+        <EntityType Name="HANHKHACH">
+          <Key>
+            <PropertyRef Name="HANHKHACHID" />
+          </Key>
+          <Property Name="HANHKHACHID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CMNDHOACPASSPORT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GIOITINH" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VEs" Relationship="Self.FK_VEs_HANHKHACHes" FromRole="HANHKHACHes" ToRole="VEs" />
+        </EntityType>
+        <EntityType Name="LICHTRINHBAY">
+          <Key>
+            <PropertyRef Name="LICHTRINHBAYID" />
+          </Key>
+          <Property Name="LICHTRINHBAYID" Type="Int32" Nullable="false" />
+          <Property Name="GIOKHOIHANHDUKIEN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TGBAYDUKIEN" Type="Double" Nullable="false" />
+          <Property Name="SBDI" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SBDEN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CHUYENBAYID" Type="Int32" />
+          <NavigationProperty Name="BANGTRATHONGTINVEs" Relationship="Self.FK_BANGTRATHONGTINVEs_LICHTRINHBAYs" FromRole="LICHTRINHBAYs" ToRole="BANGTRATHONGTINVEs" />
+          <NavigationProperty Name="CHITIETLICHTRINHBAYs" Relationship="Self.FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs" FromRole="LICHTRINHBAYs" ToRole="CHITIETLICHTRINHBAYs" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK_LICHTRINHBAYs_CHUYENBAYs" FromRole="LICHTRINHBAYs" ToRole="CHUYENBAYs" />
+          <NavigationProperty Name="SANBAY" Relationship="Self.FK_LICHTRINHBAYs_SANBAYs_1" FromRole="LICHTRINHBAYs" ToRole="SANBAYs" />
+          <NavigationProperty Name="SANBAY1" Relationship="Self.FK_LICHTRINHBAYs_SANBAYs_2" FromRole="LICHTRINHBAYs" ToRole="SANBAYs" />
+          <NavigationProperty Name="VEs" Relationship="Self.FK_VEs_LICHTRINHBAYs" FromRole="LICHTRINHBAYs" ToRole="VEs" />
+        </EntityType>
+        <EntityType Name="LOAIVE">
+          <Key>
+            <PropertyRef Name="LOAIVEID" />
+          </Key>
+          <Property Name="LOAIVEID" Type="Int32" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BANGTRATHONGTINVEs" Relationship="Self.FK_BANGTRATHONGTINVEs_LOAIVEs" FromRole="LOAIVEs" ToRole="BANGTRATHONGTINVEs" />
+          <NavigationProperty Name="VEs" Relationship="Self.FK_VEs_LOAIVEs" FromRole="LOAIVEs" ToRole="VEs" />
+        </EntityType>
+        <EntityType Name="SANBAY">
+          <Key>
+            <PropertyRef Name="SANBAYID" />
+          </Key>
+          <Property Name="SANBAYID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CHITIETLICHTRINHBAYs" Relationship="Self.FK_CHITIETLICHTRINHBAYs_SANBAYs" FromRole="SANBAYs" ToRole="CHITIETLICHTRINHBAYs" />
+          <NavigationProperty Name="LICHTRINHBAYs" Relationship="Self.FK_LICHTRINHBAYs_SANBAYs_1" FromRole="SANBAYs" ToRole="LICHTRINHBAYs" />
+          <NavigationProperty Name="LICHTRINHBAYs1" Relationship="Self.FK_LICHTRINHBAYs_SANBAYs_2" FromRole="SANBAYs" ToRole="LICHTRINHBAYs" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SLSB" Type="Int32" Nullable="false" />
+          <Property Name="MIN_TGB" Type="Double" Nullable="false" />
+          <Property Name="MIN_TGD" Type="Double" Nullable="false" />
+          <Property Name="MAX_TGD" Type="Double" Nullable="false" />
+          <Property Name="SLHV" Type="Int32" Nullable="false" />
+          <Property Name="MIN_TGDV" Type="Double" Nullable="false" />
+          <Property Name="MIN_TGHV" Type="Double" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VE">
+          <Key>
+            <PropertyRef Name="VEID" />
+          </Key>
+          <Property Name="VEID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LICHTRINHBAYID" Type="Int32" />
+          <Property Name="LOAIVEID" Type="Int32" />
+          <Property Name="HANHKHACHID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NGAYBAN" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="HANHKHACH" Relationship="Self.FK_VEs_HANHKHACHes" FromRole="VEs" ToRole="HANHKHACHes" />
+          <NavigationProperty Name="LICHTRINHBAY" Relationship="Self.FK_VEs_LICHTRINHBAYs" FromRole="VEs" ToRole="LICHTRINHBAYs" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK_VEs_LOAIVEs" FromRole="VEs" ToRole="LOAIVEs" />
+        </EntityType>
+        <Association Name="FK_BANGTRATHONGTINVEs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="1" />
+          <End Role="BANGTRATHONGTINVEs" Type="Self.BANGTRATHONGTINVE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="BANGTRATHONGTINVEs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BANGTRATHONGTINVEs_LOAIVEs">
+          <End Role="LOAIVEs" Type="Self.LOAIVE" Multiplicity="1" />
+          <End Role="BANGTRATHONGTINVEs" Type="Self.BANGTRATHONGTINVE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Principal>
+            <Dependent Role="BANGTRATHONGTINVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_CHUYENBAYs">
+          <End Role="CHUYENBAYs" Type="Self.CHUYENBAY" Multiplicity="0..1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="CHUYENBAYKETIEPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETLICHTRINHBAYs_SANBAYs">
+          <End Role="SANBAYs" Type="Self.SANBAY" Multiplicity="1" />
+          <End Role="CHITIETLICHTRINHBAYs" Type="Self.CHITIETLICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="CHITIETLICHTRINHBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_CHUYENBAYs">
+          <End Role="CHUYENBAYs" Type="Self.CHUYENBAY" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="CHUYENBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_HANHKHACHes">
+          <End Role="HANHKHACHes" Type="Self.HANHKHACH" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANHKHACHes">
+              <PropertyRef Name="HANHKHACHID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="HANHKHACHID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_SANBAYs_1">
+          <End Role="SANBAYs" Type="Self.SANBAY" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="SBDI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LICHTRINHBAYs_SANBAYs_2">
+          <End Role="SANBAYs" Type="Self.SANBAY" Multiplicity="0..1" />
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAYs">
+              <PropertyRef Name="SANBAYID" />
+            </Principal>
+            <Dependent Role="LICHTRINHBAYs">
+              <PropertyRef Name="SBDEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_LICHTRINHBAYs">
+          <End Role="LICHTRINHBAYs" Type="Self.LICHTRINHBAY" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHTRINHBAYs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="LICHTRINHBAYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VEs_LOAIVEs">
+          <End Role="LOAIVEs" Type="Self.LOAIVE" Multiplicity="0..1" />
+          <End Role="VEs" Type="Self.VE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Principal>
+            <Dependent Role="VEs">
+              <PropertyRef Name="LOAIVEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VeMayBayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BANGTRATHONGTINVEs" EntityType="Self.BANGTRATHONGTINVE" />
+          <EntitySet Name="CHITIETLICHTRINHBAYs" EntityType="Self.CHITIETLICHTRINHBAY" />
+          <EntitySet Name="CHUYENBAYs" EntityType="Self.CHUYENBAY" />
+          <EntitySet Name="HANHKHACHes" EntityType="Self.HANHKHACH" />
+          <EntitySet Name="LICHTRINHBAYs" EntityType="Self.LICHTRINHBAY" />
+          <EntitySet Name="LOAIVEs" EntityType="Self.LOAIVE" />
+          <EntitySet Name="SANBAYs" EntityType="Self.SANBAY" />
+          <EntitySet Name="THAMSOes" EntityType="Self.THAMSO" />
+          <EntitySet Name="VEs" EntityType="Self.VE" />
+          <AssociationSet Name="FK_BANGTRATHONGTINVEs_LICHTRINHBAYs" Association="Self.FK_BANGTRATHONGTINVEs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="BANGTRATHONGTINVEs" EntitySet="BANGTRATHONGTINVEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BANGTRATHONGTINVEs_LOAIVEs" Association="Self.FK_BANGTRATHONGTINVEs_LOAIVEs">
+            <End Role="LOAIVEs" EntitySet="LOAIVEs" />
+            <End Role="BANGTRATHONGTINVEs" EntitySet="BANGTRATHONGTINVEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_CHUYENBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_CHUYENBAYs">
+            <End Role="CHUYENBAYs" EntitySet="CHUYENBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETLICHTRINHBAYs_SANBAYs" Association="Self.FK_CHITIETLICHTRINHBAYs_SANBAYs">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="CHITIETLICHTRINHBAYs" EntitySet="CHITIETLICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_CHUYENBAYs" Association="Self.FK_LICHTRINHBAYs_CHUYENBAYs">
+            <End Role="CHUYENBAYs" EntitySet="CHUYENBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_HANHKHACHes" Association="Self.FK_VEs_HANHKHACHes">
+            <End Role="HANHKHACHes" EntitySet="HANHKHACHes" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_SANBAYs_1" Association="Self.FK_LICHTRINHBAYs_SANBAYs_1">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LICHTRINHBAYs_SANBAYs_2" Association="Self.FK_LICHTRINHBAYs_SANBAYs_2">
+            <End Role="SANBAYs" EntitySet="SANBAYs" />
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_LICHTRINHBAYs" Association="Self.FK_VEs_LICHTRINHBAYs">
+            <End Role="LICHTRINHBAYs" EntitySet="LICHTRINHBAYs" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VEs_LOAIVEs" Association="Self.FK_VEs_LOAIVEs">
+            <End Role="LOAIVEs" EntitySet="LOAIVEs" />
+            <End Role="VEs" EntitySet="VEs" />
+          </AssociationSet>
+          <EntitySet Name="HANGBAYs" EntityType="VeMayBayModel.HANGBAY" />
+          <AssociationSet Name="FK_CHUYENBAYs_HANGBAYs" Association="VeMayBayModel.FK_CHUYENBAYs_HANGBAYs">
+            <End Role="HANGBAY" EntitySet="HANGBAYs" />
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HANGBAY">
+          <Key>
+            <PropertyRef Name="HANGBAYID" />
+          </Key>
+          <Property Name="HANGBAYID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOTLINE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DCHIVP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="THONGTIN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NGHOPTAC" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CHUYENBAYs" Relationship="VeMayBayModel.FK_CHUYENBAYs_HANGBAYs" FromRole="HANGBAY" ToRole="CHUYENBAY" />
+        </EntityType>
+        <Association Name="FK_CHUYENBAYs_HANGBAYs">
+          <End Type="VeMayBayModel.HANGBAY" Role="HANGBAY" Multiplicity="1" />
+          <End Type="VeMayBayModel.CHUYENBAY" Role="CHUYENBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGBAY">
+              <PropertyRef Name="HANGBAYID" />
+            </Principal>
+            <Dependent Role="CHUYENBAY">
+              <PropertyRef Name="HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VeMayBayModelStoreContainer" CdmEntityContainer="VeMayBayEntities">
+          <EntitySetMapping Name="BANGTRATHONGTINVEs">
+            <EntityTypeMapping TypeName="VeMayBayModel.BANGTRATHONGTINVE">
+              <MappingFragment StoreEntitySet="BANGTRATHONGTINVEs">
+                <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+                <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+                <ScalarProperty Name="GIAVE" ColumnName="GIAVE" />
+                <ScalarProperty Name="SOLUONGMAX" ColumnName="SOLUONGMAX" />
+                <ScalarProperty Name="GHETRONG" ColumnName="GHETRONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETLICHTRINHBAYs">
+            <EntityTypeMapping TypeName="VeMayBayModel.CHITIETLICHTRINHBAY">
+              <MappingFragment StoreEntitySet="CHITIETLICHTRINHBAYs">
+                <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+                <ScalarProperty Name="SANBAYID" ColumnName="SANBAYID" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="TG_CHO" ColumnName="TG_CHO" />
+                <ScalarProperty Name="CHUYENBAYKETIEPID" ColumnName="CHUYENBAYKETIEPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUYENBAYs">
+            <EntityTypeMapping TypeName="VeMayBayModel.CHUYENBAY">
+              <MappingFragment StoreEntitySet="CHUYENBAYs">
+                <ScalarProperty Name="CHUYENBAYID" ColumnName="CHUYENBAYID" />
+                <ScalarProperty Name="GIOKHOIHANHTHUCTE" ColumnName="GIOKHOIHANHTHUCTE" />
+                <ScalarProperty Name="GIODENDUKIEN" ColumnName="GIODENDUKIEN" />
+                <ScalarProperty Name="MACHUYENBAY" ColumnName="MACHUYENBAY" />
+                <ScalarProperty Name="HANG" ColumnName="HANG" />
+                <ScalarProperty Name="MAYBAY" ColumnName="MAYBAY" />
+                <ScalarProperty Name="GOIDICHVU" ColumnName="GOIDICHVU" />
+                <ScalarProperty Name="HANHLYXACHTAY" ColumnName="HANHLYXACHTAY" />
+                <ScalarProperty Name="HANHLYKIGOI" ColumnName="HANHLYKIGOI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HANHKHACHes">
+            <EntityTypeMapping TypeName="VeMayBayModel.HANHKHACH">
+              <MappingFragment StoreEntitySet="HANHKHACHes">
+                <ScalarProperty Name="HANHKHACHID" ColumnName="HANHKHACHID" />
+                <ScalarProperty Name="CMNDHOACPASSPORT" ColumnName="CMNDHOACPASSPORT" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LICHTRINHBAYs">
+            <EntityTypeMapping TypeName="VeMayBayModel.LICHTRINHBAY">
+              <MappingFragment StoreEntitySet="LICHTRINHBAYs">
+                <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+                <ScalarProperty Name="GIOKHOIHANHDUKIEN" ColumnName="GIOKHOIHANHDUKIEN" />
+                <ScalarProperty Name="TGBAYDUKIEN" ColumnName="TGBAYDUKIEN" />
+                <ScalarProperty Name="SBDI" ColumnName="SBDI" />
+                <ScalarProperty Name="SBDEN" ColumnName="SBDEN" />
+                <ScalarProperty Name="CHUYENBAYID" ColumnName="CHUYENBAYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIVEs">
+            <EntityTypeMapping TypeName="VeMayBayModel.LOAIVE">
+              <MappingFragment StoreEntitySet="LOAIVEs">
+                <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SANBAYs">
+            <EntityTypeMapping TypeName="VeMayBayModel.SANBAY">
+              <MappingFragment StoreEntitySet="SANBAYs">
+                <ScalarProperty Name="SANBAYID" ColumnName="SANBAYID" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THAMSOes">
+            <EntityTypeMapping TypeName="VeMayBayModel.THAMSO">
+              <MappingFragment StoreEntitySet="THAMSOes">
+                <ScalarProperty Name="SLSB" ColumnName="SLSB" />
+                <ScalarProperty Name="MIN_TGB" ColumnName="MIN_TGB" />
+                <ScalarProperty Name="MIN_TGD" ColumnName="MIN_TGD" />
+                <ScalarProperty Name="MAX_TGD" ColumnName="MAX_TGD" />
+                <ScalarProperty Name="SLHV" ColumnName="SLHV" />
+                <ScalarProperty Name="MIN_TGDV" ColumnName="MIN_TGDV" />
+                <ScalarProperty Name="MIN_TGHV" ColumnName="MIN_TGHV" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VEs">
+            <EntityTypeMapping TypeName="VeMayBayModel.VE">
+              <MappingFragment StoreEntitySet="VEs">
+                <ScalarProperty Name="VEID" ColumnName="VEID" />
+                <ScalarProperty Name="LICHTRINHBAYID" ColumnName="LICHTRINHBAYID" />
+                <ScalarProperty Name="LOAIVEID" ColumnName="LOAIVEID" />
+                <ScalarProperty Name="HANHKHACHID" ColumnName="HANHKHACHID" />
+                <ScalarProperty Name="NGAYBAN" ColumnName="NGAYBAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HANGBAYs">
+            <EntityTypeMapping TypeName="VeMayBayModel.HANGBAY">
+              <MappingFragment StoreEntitySet="HANGBAYs">
+                <ScalarProperty Name="NGHOPTAC" ColumnName="NGHOPTAC" />
+                <ScalarProperty Name="THONGTIN" ColumnName="THONGTIN" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DCHIVP" ColumnName="DCHIVP" />
+                <ScalarProperty Name="HOTLINE" ColumnName="HOTLINE" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HANGBAYID" ColumnName="HANGBAYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

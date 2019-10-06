@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="QuanLyBanVeMay.UC_LoginSuccessful"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyBanVeMay"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             d:DesignHeight="110" d:DesignWidth="270"
+             Background="Transparent">
+    <Grid Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <StackPanel Margin="0,0,0,17">
+
+            <materialDesign:PackIcon HorizontalAlignment="Center" Kind="SettingsOutline" Width="38" Height="34" Foreground="Gray" Margin="61,0,73,0"/>
+            <TextBlock HorizontalAlignment="Center"  Foreground="Gray" FontSize="13"> Chúng tôi đang cài đặt dữ liệu cho bạn</TextBlock>
+            <!--Process State-->
+            <Label Content="--------------------Finished!!!"  FontSize="13"  FontStyle="Italic" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF34F321" OpacityMask="White" />
+
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

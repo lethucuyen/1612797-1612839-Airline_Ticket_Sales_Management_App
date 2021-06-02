@@ -1,4 +1,6 @@
-# 1612797_1612839_PhanMemBanVeMayBay
-Đồ án cuối kỳ | môn Phân tích và thiết kế phần mềm
+Link Youtube:
+https://www.youtube.com/watch?v=uW3ISB_lAkQ&t=53s
+https://www.youtube.com/watch?v=XI5jPirURpY
+
 Project dùng C#/WPF
 IDE Visual Studio 2017
